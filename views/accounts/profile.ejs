@@ -1,0 +1,17 @@
+<% layout('boilerplate') %>
+
+<div class="container">
+    <% if (message.length > 0) { %>
+    <div class="alert alert-success alert-dismissible">
+        <button class="close" type="button" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times</span>
+        </button>
+        <%= message %>
+    </div>
+
+    <% } %>
+
+    <p class="display-4"><%= user.profile.name %></p>
+
+    <img src="<%= user.profile.picture %>" />
+</div>

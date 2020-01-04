@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Believe Master</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="/courses">Browse</a>
+            </li>
+            <% if (!user) { %>
+            <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+            </li>
+            <% } else { %>
+            <% if (user.role === "teacher") { %>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Instructor
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="nav-link font-weight-bold text-dark" href="/teacher/dashboard">Dashboard</a>
+                    <a class="nav-link font-weight-bold text-dark" href="/revenue-report">Revenue Report</a>
+                </div>
+            </li>
+            <% } else { %>
+            <li class="nav-item">
+                <a class="nav-link" href="/become-an-instructor">Be an Instructor</a>
+            </li>
+            <% } %>
+            <li class="nav-item">
+                <a class="nav-link" href="/profile"><%= user.profile.name %></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</nav>

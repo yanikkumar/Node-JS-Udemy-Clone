@@ -1,0 +1,14 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  padding-top: 3.5rem;
+}
+
+.bg{
+  /* background: url('https://www.da-files.com/contests/2018/magicians/img/bg-intro2.jpg?7070324174') no-repeat center center; */
+  position: fixed;
+  width: 100%;
+  height: 350px;  /* same height as jumbotron */
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
